@@ -1,0 +1,26 @@
+{
+  "datasetname": "snomed_dataset.csv",
+  "workflow": "evaluate",
+  "MODEL_NAMES": [
+      {"model": "ollama/gemma2:9b", "temperature": 0.25},
+      {"model": "ollama/gemma2:9b", "temperature": 0.5},     
+      {"model": "ollama/gemma2:9b", "temperature": 0.75},
+      {"model": "ollama/qwen2.5:14b", "temperature": 0.25},
+      {"model": "ollama/qwen2.5:14b", "temperature": 0.5},
+      {"model": "ollama/qwen2.5:14b", "temperature": 0.75},
+      {"model": "ollama/deepseek-r1:14b", "temperature": 0.25},
+      {"model": "ollama/deepseek-r1:14b", "temperature": 0.5},
+      {"model": "ollama/deepseek-r1:14b", "temperature": 0.75},
+      {"model": "ollama/phi3:14b", "temperature": 0.25},
+      {"model": "ollama/phi3:14b", "temperature": 0.5},
+      {"model": "ollama/phi3:14b", "temperature": 0.75}
+  ],
+  "TASKS": [      
+      "Identify if there is a taxonomic relationship between ${childdesc} and ${parentdesc} fields",
+      "Determines if ${childdesc} is a type of ${parentdesc}",
+      "Determine whether the concept described in ${parentdesc} represents a generalization of the concept outlined in ${childdesc}"
+  ],
+  "OPTIMIZERS": [
+      [ "dspy.teleprompt.MIPROv2", {"auto": "light", "num_threads": 24} ]
+  ]
+}

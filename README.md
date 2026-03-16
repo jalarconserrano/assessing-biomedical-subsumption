@@ -14,7 +14,7 @@ The goal of this repository is to evaluate whether **open, general-purpose LLMs*
 
 This codebase:
 
-- Executes **3,300 SNOMED CT concept-pair queries** across five test archetypes (R, R⁺, R⊕, R⁻¹, (R⁺)⁻¹).  
+- Executes **3,300 SNOMED CT concept-pair queries** across five test archetypes (R, R⁺, ¬R⁺, R⁻¹, (R⁺)⁻¹).  
 - Sends each query to **multiple LLMs** using optimized prompts and temperature settings.  
 - Enforces **strict boolean outputs** (`true` / `false`) with schema-constrained decoding.  
 - Applies an internal **self-refinement loop** to correct malformed outputs.  
